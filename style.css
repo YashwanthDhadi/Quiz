@@ -18,7 +18,8 @@ body {
 }
 
 /* Common container styles */
-#welcome-screen, #quiz-screen {
+#welcome-screen,
+#quiz-screen {
   background-color: rgba(0, 0, 0, 0.3);
   padding: 40px 30px;
   border-radius: 20px;
@@ -73,8 +74,14 @@ button:hover {
 
 /* Animation */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Quiz option buttons */
@@ -111,4 +118,40 @@ button:hover {
 #next-btn:hover {
   background-color: #34d399;
   transform: scale(1.05);
+}
+
+/* ✅ RESPONSIVE STYLING BELOW */
+@media (max-width: 600px) {
+  #welcome-screen,
+  #quiz-screen {
+    padding: 25px 15px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 10px 16px;
+  }
+
+  #next-btn {
+    width: 100%;
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  #quiz-container button {
+    font-size: 0.95rem;
+    padding: 12px;
+  }
 }
