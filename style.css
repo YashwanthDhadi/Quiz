@@ -30,14 +30,12 @@ body {
   animation: fadeIn 0.7s ease;
 }
 
-/* Quiz screen layout fix */
 #quiz-screen {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Headings */
 h1 {
   font-size: 2rem;
   margin-bottom: 20px;
@@ -48,13 +46,11 @@ h2 {
   margin-bottom: 15px;
 }
 
-/* Paragraph text */
 p {
   margin-top: 10px;
   font-size: 1rem;
 }
 
-/* General buttons */
 button {
   padding: 12px 20px;
   font-size: 1rem;
@@ -72,7 +68,6 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* Animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -84,7 +79,6 @@ button:hover {
   }
 }
 
-/* Quiz option buttons */
 #quiz-container button {
   margin: 10px 0;
   width: 100%;
@@ -100,7 +94,6 @@ button:hover {
   background-color: #ddd;
 }
 
-/* Next Button — fixed & stylish */
 #next-btn {
   margin-top: 30px;
   padding: 12px 24px;
@@ -120,7 +113,57 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* ✅ RESPONSIVE STYLING BELOW */
+input[type="text"] {
+  padding: 10px;
+  margin: 12px 0;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  width: 100%;
+  max-width: 300px;
+}
+
+/* 🎉 Result Page Styles */
+.result-card {
+  background-color: #ffffff10;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  animation: fadeIn 0.8s ease;
+}
+
+.result-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.result-name {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.score-circle {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 20px;
+  background: #fff;
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.15);
+}
+
+.percentage {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+/* ✅ Responsive Design */
 @media (max-width: 600px) {
   #welcome-screen,
   #quiz-screen {
@@ -153,5 +196,11 @@ button:hover {
   #quiz-container button {
     font-size: 0.95rem;
     padding: 12px;
+  }
+
+  .score-circle {
+    width: 80px;
+    height: 80px;
+    font-size: 1.2rem;
   }
 }
