@@ -4,14 +4,21 @@ let questions = [
   { question: "Color of sky?", options: ["Green", "Blue", "Red"], answer: "Blue" },
   { question: "5 * 2 = ?", options: ["10", "15", "5"], answer: "10" },
   { question: "Largest planet?", options: ["Earth", "Jupiter", "Mars"], answer: "Jupiter" }
-
-  
 ];
 
 let current = 0;
 let score = 0;
+let username = "";
 
 function startQuiz() {
+  const input = document.getElementById('username');
+  username = input.value.trim();
+
+  if (!username) {
+    alert("Please enter your name to begin the quiz!");
+    return;
+  }
+
   document.getElementById('welcome-screen').style.display = 'none';
   document.getElementById('quiz-screen').style.display = 'flex';
   showQuestion();
@@ -54,9 +61,25 @@ function nextQuestion() {
 
 function showScore() {
   const container = document.getElementById('quiz-container');
-  container.innerHTML = `<h2>🎉 Quiz Completed!</h2>
-    <p>Your Score: <strong>${score}/${questions.length}</strong></p>
-    <button onclick="restartQuiz()">Restart 🔁</button>`;
+  const percentage = Math.round((score / questions.length) * 100);
+  let emoji = "😐";
+
+  if (percentage === 100) emoji = "🏆";
+  else if (percentage >= 80) emoji = "🎉";
+  else if (percentage >= 60) emoji = "🙂";
+  else emoji = "😬";
+
+  container.innerHTML = `
+    <div class="result-card">
+      <h2>${emoji} Quiz Completed!</h2>
+      <p class="result-name">Great job, <strong>${username}</strong>!</p>
+      <div class="score-circle">
+        <span>${score}/${questions.length}</span>
+      </div>
+      <p class="percentage">You got <strong>${percentage}%</strong> correct.</p>
+      <button onclick="restartQuiz()">🔁 Try Again</button>
+    </div>
+  `;
   document.getElementById('next-btn').style.display = 'none';
 }
 
