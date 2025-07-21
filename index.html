@@ -1,23 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Quiz App</title>
-  <link rel="stylesheet" href="style.css?v=4" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz App - Categories</title>
+  <link rel="stylesheet" href="style.css?v=10" />
 </head>
 <body>
-  <div id="welcome-screen">
-    <h1>🎓 Welcome to the Quiz!</h1>
-    <p>Enter your name to begin:</p>
-    <input type="text" id="username" placeholder="Your Name" required />
-    <br>
-    <button onclick="startQuiz()">Let's Go 🚀</button>
+  <!-- Name Entry Page -->
+  <div id="name-screen">
+    <h1>🎓 Welcome to the Quiz App</h1>
+    <p>Please enter your name to begin:</p>
+    <input type="text" id="username" placeholder="Enter your name" />
+    <button onclick="goToCategoryScreen()">Continue ➡️</button>
   </div>
 
+  <!-- Category Selection Page -->
+  <div id="category-screen" style="display: none;">
+    <h2>📚 Select a Category</h2>
+    <div class="category-buttons">
+      <button onclick="startCategory('movies')">🎬 Movies & Cinema</button>
+      <button onclick="startCategory('logos')">🏪 Guess the Brand</button>
+      <button onclick="startCategory('sports')">⚽ Sports Trivia</button>
+      <button onclick="startCategory('aptitude')">🧠 Quick Aptitude</button>
+      <button onclick="startCategory('tech')">🛠️ Tech & Engineering</button>
+      <button onclick="startCategory('history')">🇮🇳 History & Culture</button>
+      <button onclick="startCategory('facts')">🤔 Fun Facts & Curiosities</button>
+      <button onclick="startCategory('nature')">🌿 Nature & Life</button>
+    </div>
+  </div>
+
+  <!-- Quiz Screen -->
   <div id="quiz-screen" style="display: none;">
     <div id="quiz-container"></div>
     <button id="next-btn" onclick="nextQuestion()">Next</button>
   </div>
 
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=10"></script>
 </body>
 </html>
